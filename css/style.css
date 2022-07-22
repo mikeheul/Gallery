@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code";
+}
+
+.row {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-2 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-3 {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+.col-4 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col-5 {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+.parallax {
+  position: relative;
+  flex-direction: column;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background: rgb(36, 35, 39);
+}
+main h1 {
+  margin-bottom: 50px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.buttons button {
+  padding: 10px 40px;
+  border: 2px solid #fff;
+  background: none;
+  outline: none;
+  font-size: 0.8em;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.5s;
+}
+.buttons button:hover {
+  background: rgba(255, 255, 255, 0.411);
+}
+
+.gallery {
+  max-width: 1200px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  filter: grayscale(1);
+  transition: 0.5s;
+}
+.gallery-item .overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(13, 15, 33);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.705) 0%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(0);
+}
+.gallery-item .overlay p {
+  color: #fff;
+  font-size: 3em;
+}
+.gallery-item .badge {
+  position: absolute;
+  padding: 5px 20px;
+  background: rgba(47, 157, 165, 0.769);
+  left: -50%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  line-height: 1em;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: 0.5s;
+}
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+.gallery-item:hover .badge {
+  opacity: 1;
+  left: 0;
+}
+.gallery-item:hover img {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+@media (max-width: 1000px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .col-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
